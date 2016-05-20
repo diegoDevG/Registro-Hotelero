@@ -1,0 +1,258 @@
+<?php require_once('php/conexion.php') ?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Tecnored.co">
+
+    <title>Registro de Clientes-Hotel Boyacá Plaza x</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap datepicker js -->
+    <script src="js/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap search js -->
+    <script src="js/search.js"></script>
+    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Principal</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Pagina Web</a>
+                    </li>
+                    <li>
+                        <a href="#">Facturacion</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacto</a>
+                    </li>
+                    <li><a class="nav navbar-nav navbar-right" href="#search">Search</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    <!--</nav>-->
+                
+                
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Registro de Clientes</h1>
+                <!-- <p class="lead">Hotel Boyaca Plaza</p>-->
+                <img src="img/imagen5.png" height="110" width="290">
+            </div>
+        </div>
+
+       <!-- inicio - modal resultado--> 
+        <div class="modal fade" id="Resultado" tabindex="-1" role="dialog" arial-labelledby="myModalLabel" arial-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Modal title</h4>
+              </div>
+              <p>One fine body&hellip;</p>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- Boton de busqueda--> 
+
+        <FORM METHOD=POST ACTION="php/buscar.php"> 
+Buscar: <INPUT TYPE="text" NAME="busqueda"> 
+<input type="submit">
+</FORM>
+
+        <form class="col-lg-12" action="php/buscar.php" method= "post">
+            <div class="input-group" style="width:340px;text-align:center;margin:0 auto;">
+                <input type="text" id="busqueda" class="form-control input-lg" placeholder="Ingrese su busqueda">
+                <span class="input-group-btn"><input type="submit" name="search" class="btn btn-lg btn-primary " value="Buscar"></span>
+            </div>
+                
+
+        </form>
+
+        
+        <!--<form class="col-lg-12" action="php/buscar.php" method="post">
+            <div class="input-group" style="width:340px;text-align:center;margin:0 auto;" text-center v-center>
+            <input class="form-control input-lg" title="Termino de busqueda" placeholder="Ingrese su busqueda" type="text">
+              <span class="input-group-btn"><button class="btn btn-lg btn-primary" data-toggle="modal" data-target="#Resultado" type="button">Buscar</button></span>
+            </div>
+          </form>-->
+          <!-- /Boton de busqueda-->
+
+          <!-- Formulario ingreso de datos-->
+        <form class="form-horizontal" action="php/registro.php" method= post>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Nombre:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" id="inputname" name="Nombre" placeholder="Nombres y apellidos Completos" required>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label class="control-label col-xs-3">Identificacion:</label>
+                <div class="col-xs-6">
+                    <input type="number" class="form-control" id="inputid" name="Documento" placeholder="Documento de Identidad" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Nacionalidad:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="Nacionalidad" placeholder="Nacionalidad" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Fecha de Nacimiento </label>
+                <div class="col-xs-6">
+                    <input  type="text" class="form-control" name="F_nacimiento" placeholder="Click para seleccionar la fecha: Dia/Mes/Año"  id="datepicker">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Lugar de Procedencia:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="procedencia" placeholder="Ciudad" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Destino:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="destino" placeholder="A donde se dirije" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Direccion de residencia:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="dir_residencia"placeholder="Direccion de residencia" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3">Ciudad de residencia:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="ciudad_residencia" placeholder="Ciudad de residencia" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" >Telefono:</label>
+                <div class="col-xs-6">
+                    <input type="tel" class="form-control" name="telefono" placeholder="Telefono" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-3" >Email:</label>
+                <div class="col-xs-6">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+            </div>
+            
+            <!-- script datepicker-->
+            <script type="text/javascript">
+            $(document).ready(function () {
+                        
+                        $('#datepicker').datepicker({
+                            startView: 2,
+                            format: "yyyy/mm/dd",
+                            language: "es",
+                            autoclose: true
+
+                        });  
+                    
+                    });
+            </script>
+            <!-- /.script datepicker-->
+
+            <div class="form-group">
+                <label class="control-label col-xs-3">Genero:</label>
+                <div class="col-xs-2">
+                    <label class="radio-inline">
+                        <input type="radio"  name="genero" value="Masculino"> Masculino
+                    </label>
+                </div>
+                <div class="col-xs-2">
+                    <label class="radio-inline">
+                        <input type="radio" name="genero" value="Femenino"> Femenino
+                    </label>
+                </div>
+            </div>
+            
+            <br>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <input type="submit" class="btn btn-primary" value="Enviar">
+                    <input type="reset" class="btn btn-default" value="Limpiar">
+                </div>
+            </div>
+        </form>
+        <!-- /.Formulario ingreso de datos-->
+
+    </div>
+    <!-- /.container -->
+    
+</body>
+
+</html>

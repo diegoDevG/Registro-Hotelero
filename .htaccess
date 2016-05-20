@@ -1,0 +1,2 @@
+AuthName "Hotel Boyaca Plaza"
+AuthUserFile "/home/soelcoco/.htpasswds/public_html/tecnored.co/BoyacaPlaza/passwd"

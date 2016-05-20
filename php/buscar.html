@@ -1,0 +1,25 @@
+<html>
+<body>
+
+<?php
+
+include("conexion.php");
+
+
+$sql="select * from clientes";
+$datos=mysql_query($sql,$con);
+
+echo "<table border='1'>";
+while ($renglon=mysql_fetch_array($datos)) {
+	echo "<tr>";
+	echo "<td>". $renglon['Nombre']."</td>";
+	echo "<td>". $renglon['Documento']."</td>";
+	echo "</tr>";
+}
+
+echo "</table>";
+
+
+?>
+</body>
+</html>
